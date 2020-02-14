@@ -23,7 +23,6 @@ class Reek(RubyLinter):
     cmd = ('reek', '${temp_file}')
     regex = r'^.+?\[(?P<line>\d+).*\]:(?P<message>.+) \[.*\]'
     tempfile_suffix = 'rb'
-    version_requirement = '>= 5.0'
 
     def split_match(self, match):
         """Extract named capture groups from the regex and return them as a tuple."""
