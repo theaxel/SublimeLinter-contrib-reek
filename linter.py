@@ -10,19 +10,20 @@
 
 """This module exports the Reek plugin class."""
 
-from SublimeLinter.lint import RubyLinter
+from SublimeLinter.lint import Linter
 import re
 
 
-class Reek(RubyLinter):
+class Reek(Linter):
     """Provides an interface to reek."""
     defaults = {
         'selector': 'source.ruby - text.html - text.haml'
     }
 
-    cmd = ('reek', '${temp_file}')
+    cmd = ['reek', '${temp_file}']
     regex = r'^.+?\[(?P<line>\d+).*\]:(?P<message>.+) \[.*\]'
     tempfile_suffix = 'rb'
+    multiline = True
 
     def split_match(self, match):
         """Extract named capture groups from the regex and return them as a tuple."""
