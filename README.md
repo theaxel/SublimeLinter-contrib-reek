@@ -1,12 +1,15 @@
 SublimeLinter-contrib-reek
 ================================
 
-[![Build Status](https://travis-ci.org/codequest-eu/SublimeLinter-contrib-reek.svg?branch=master)](https://travis-ci.org/codequest-eu/SublimeLinter-contrib-reek)
+[![Build Status](https://travis-ci.org/theaxel/SublimeLinter-contrib-reek.svg?branch=master)](https://travis-ci.org/theaxel/SublimeLinter-contrib-reek)
 
+***This is a fork, updating it to SublimeLinter v4 and reek v5***
+
+    
 This linter plugin for [SublimeLinter][docs] provides an interface to [reek](https://github.com/troessner/reek). It will be used with files that have the `ruby`, `ruby on rails`, `rspec`, `betterruby`, `better rspec`, `ruby experimental` or `cucumber steps` syntaxes.
 
 ## Installation
-SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
+SublimeLinter 4 must be installed in order to use this plugin. If SublimeLinter 4 is not installed, please follow the instructions [here][installation].
 
 ### Linter installation
 Before using this plugin, you must ensure that `reek` is installed on your system. To install `reek`, do the following:
@@ -18,9 +21,9 @@ Before using this plugin, you must ensure that `reek` is installed on your syste
    [sudo] gem install reek
    ```
 
-1. If you are using `rbenv` or `rvm`, ensure that they are loaded in your shell’s correct startup file. See [here](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#shell-startup-files) for more information.
+1. If you are using `asdf`, `rbenv` or `rvm`, ensure that they are loaded in your shell’s correct startup file. See [here](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#shell-startup-files) for more information.
 
-**Note:** This plugin requires `reek` 3.5.0 or later.
+**Note:** This plugin requires `reek` 5.0 or later.
 
 ### Linter configuration
 In order for `reek` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
@@ -32,9 +35,13 @@ Please use [Package Control][pc] to install the linter plugin. This will ensure 
 
 To install via Package Control, do the following:
 
-1. Within Sublime Text, bring up the [Command Palette][cmd] and type `install`. Among the commands you should see `Package Control: Install Package`. If that command is not highlighted, use the keyboard or mouse to select it. There will be a pause of a few seconds while Package Control fetches the list of available plugins.
+1. Make sure you don't have an installed version of `SublimeLinter-contrib-reek`. If you do, _uninstall_ it with Package Control `Remove Package` command
+  
+2. Within Sublime Text, use Package Control `Add Repository` command (see this [SO](https://stackoverflow.com/questions/23026201/sublime-text-3-how-to-install-plugins-from-github)) - Add https://github.com/theaxel/SublimeLinter-contrib-reek
 
-1. When the plugin list appears, type `reek`. Among the entries you should see `SublimeLinter-contrib-reek`. If that entry is not highlighted, use the keyboard or mouse to select it.
+3. Within Sublime Text, bring up the [Command Palette][cmd] and type `install`. Among the commands you should see `Package Control: Install Package`. If that command is not highlighted, use the keyboard or mouse to select it. There will be a pause of a few seconds while Package Control fetches the list of available plugins.
+
+4. When the plugin list appears, type `reek`. Among the entries you should see `SublimeLinter-contrib-reek`. If that entry is not highlighted, use the keyboard or mouse to select it. You should see this repo `github.com/theaxel/SublimeLinter-contrib-reek` on package entry's _footnote_
 
 ## Settings
 For general information on how SublimeLinter works with settings, please see [Settings][settings]. For information on generic linter settings, please see [Linter Settings][linter-settings].
